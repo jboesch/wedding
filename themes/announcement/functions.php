@@ -1,5 +1,28 @@
 <?php
 
+if(isset($_GET['rsvp'])){
+
+    global $wpdb;
+
+    $data = array(
+        'coming' => $_GET['coming'],
+        'email' => $_GET['email'],
+        'full_name' => $_GET['full_name'],
+        'allergies' => $_GET['allergies'],
+        'guests' => isset($_GET['guests']) ? join(',', $_GET['guests']) : '',
+        'guests_count' => isset($_GET['guests']) ? count($_GET['guests']) : 0,
+        'date_created' => date('Y-m-d H:i:s')
+    );
+
+    if($wpdb->insert('rsvps', $data)){
+        echo json_encode(array('status' => 'success', 'message' => 'Thanks! Your RSVP has been noted in our little online black book.'));
+    } else {
+        echo json_encode(array('status' => 'error', 'message' => 'An error occurred on our end. Contact 306-737-2529 to RSVP the \'ol fashion way.'));
+    }
+
+    die;
+}
+
 /*-----------------------------------------------------------------------------------*/
 /* Start WooThemes Functions - Please refrain from editing this section */
 /*-----------------------------------------------------------------------------------*/

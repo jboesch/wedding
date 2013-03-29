@@ -29,7 +29,7 @@
 ?>
     <div id="content" class="page components-page">
 		<div id="main" class="fullwidth">      
-                    
+
 		<?php if ( $woo_options[ 'woo_breadcrumbs_show' ] == 'true' ) { ?>
 			<div id="breadcrumbs" class="col-full">
 				<?php woo_breadcrumbs(); ?>
