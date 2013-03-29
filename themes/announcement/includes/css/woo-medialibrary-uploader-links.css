@@ -1,0 +1,60 @@
+/*---------------------------------------------------------------------------------------------
+
+TABLE OF CONTENTS:
+
+1. Media Library Uploader on Links screens
+
+---------------------------------------------------------------------------------------------*/
+
+/*-------------------------------------------------------------------------------------------*/
+/* 1. Media Library Uploader on Links screens */
+/*-------------------------------------------------------------------------------------------*/
+
+input.upload { float: left; width: 85%; padding-bottom:6px; margin-right: 10px; }
+input.upload_button { float:left; width: 45px; border-color:#BBBBBB; cursor:pointer; height:16px; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; }
+input.upload_button:hover { border-color:#666666; color:#000; }
+p { clear: both; padding-top: 10px; }
+
+.screenshot {
+	float:left;
+	margin-left:1px;
+	position:relative;
+	width:344px;
+	margin-top:3px;
+}
+
+.screenshot img {
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	-border-radius:4px;
+	background:#FAFAFA;
+	border-color:#CCCCCC #EEEEEE #EEEEEE #CCCCCC;
+	border-style:solid;
+	border-width:1px;
+	float:left;
+	max-width:334px;
+	padding:4px;
+}
+
+.screenshot .mlu_remove { 
+
+	background:url("../../functions/images/ico-delete.png") no-repeat;
+	border:medium none;
+	bottom:-4px;
+	display:block;
+	float:left;
+	height:16px;
+	padding:0;
+	position:absolute;
+	left:-4px;
+	text-indent:-9999px;
+	width:16px;
+}
+
+.screenshot .no_image .file_link {
+	margin-left: 20px;
+}
+
+.screenshot .no_image .mlu_remove {
+	bottom: 0px;
+}

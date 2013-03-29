@@ -1,0 +1,7 @@
+/* Blue Stylesheet */
+
+body, .filagree-break span  { background-color: #d6e8f6; }
+.filagree-break, .post .title, .page .title, .archive_header  { border-color: #bbc1c8; }
+#post-author, .widget, #comments .comment, #connect .social, .countdown-timer .countdown_section, #stats .stat, .host_names .ampersand  { border-color: #c1c8d0; }
+.host_names .ampersand span  { color: #788EA0; }
+#comments .nocomments  { color: #737E85; }

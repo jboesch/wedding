@@ -1,0 +1,6 @@
+/* Grey Stylesheet */
+
+body, .filagree-break span  { background-color: #f4f4f4; }
+.filagree-break, .post .title, .page .title, .archive_header  { border-color: #c7c7c7; }
+#post-author, .widget, #comments .comment, #connect .social, .countdown-timer .countdown_section, #stats .stat, .host_names .ampersand  { border-color: #d0d0d0; }
+.host_names .ampersand span  { color: #919191; }

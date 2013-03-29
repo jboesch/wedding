@@ -1,0 +1,14 @@
+<wpml-config> 
+    <admin-texts>
+        <key name="woo_links_title" />
+        <key name="woo_countdown_title" />
+        <key name="woo_babystats_title" />
+        <key name="woo_pagecontent_commentstitle" />
+        <key name="woo_blog_title" />
+        <key name="woo_headline_title" />
+        <key name="woo_headline_text" />
+        <key name="woo_occassionhosts_title" />
+        <key name="woo_occassionhosts_text" />
+        <key name="woo_embed_title" />
+    </admin-texts>  
+</wpml-config>

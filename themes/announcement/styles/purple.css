@@ -1,0 +1,7 @@
+/* Purple Stylesheet */
+
+body, .filagree-break span  { background-color: #e0b8db; }
+.filagree-break, .post .title, .page .title, .archive_header  { border-color: #b691af; }
+#post-author, .widget, #comments .comment, #connect .social, .countdown-timer .countdown_section, #stats .stat, .host_names .ampersand  { border-color: #c298c0; }
+.host_names .ampersand span  { color: #8C6491; }
+#comments .nocomments  { color: #8E658F; }

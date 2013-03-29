@@ -1,0 +1,109 @@
+*** Announcement Changelog ***
+
+2013.01.14 - version 1.3.3
+ * /includes/js/jquery.scrollTo-min.js - Update jQuery.scrollTo to the latest version for WordPress 3.5+ compatibility.
+ * /includes/theme-options.php - Move custom component sections to be subheadings of a new "Homepage" section. Add subheadings to other sections as needed.
+ * /includes/theme-functions.php - Remove function to load custom CSS on the theme options screen, as the styling is no longer required.
+ * /includes/css/woo-custom-theme-options.css - REMOVED.
+ * /includes/images/option-icon-links.gif - REMOVED.
+ * /includes/images/option-icon-smiley.png - REMOVED.
+
+2012.12.18 - version 1.3.2
+ * /includes/theme-options.php - Add notice for users using WordPress 3.5 or higher to install the "Link Manager" plugin to manage their "registry / links" section.
+
+2012.12.03 - version 1.3.1
+ * style.css - Added .photograph-slider .slide img { vertical-align: middle; } to fix slide image border gap.
+
+2012.09.28 - version 1.3.0
+ * /includes/theme-options.php - Add checkbox under "Footer Customisation" to optionally display the footer widgets on all screens other than the homepage.
+ * /includes/theme-actions.php - Remove unused "CHILD_THEME_NAME" and "CHILD_THEME_URL" constants.
+ * footer.php - Add logic for the footer widgets display theme option.
+
+2012.06.18 - version 1.2.1
+ * component-blog.php - Replace query_posts() with a new WP_Query. Remedies pagination issue when the "number of entries to display" blog theme option and the "Settings > Reading" display setting are different values.
+
+2012.04.16 - version 1.2.0
+ * - REQUIRES WOOFRAMEWORK V5.3.3 OR NEWER -
+ * /includes/css/meta-options.css - Adjusted styling of custom fields tabs to accommodate the newly-added WooFramework tabs bar.
+ * /includes/js/theme-options.js - Adjusted the custom fields tabs logic to accommodate the newly-added WooFramework tabs bar.
+ * /includes/theme-js.php - Added version number to the meta-options.css enqueue, as well as adjust the version number of the theme-options.js enqueue.
+ * /includes/theme-functions.php - Added filter to detect translated pages specified via theme options when WPML is active (use the translated page, when appropriate, instead of the selected page).
+ * wpml-config.xml - Added WPML configuration file to make text-based theme options translatable via WPML.
+
+2012.01.04 - version 1.1.12
+ * style.css - Tweaked input styling to not affect checkboxes
+
+2012.01.01 - version 1.1.11
+ * /includes/js/general.js - Make sure the comment URL field is empty when submitted if no URL was entered by the comment author.
+ * /includes/css/woo-custom-theme-options.css - Adjust the background image position for the custom icons to be visually compatible with WooFramework V5.0.3+.
+
+2011.12.02 - version 1.1.10
+ * component-links.php - Add link target to anchor tag for each link if it has been set.
+
+2011.11.19 - version 1.1.9
+ * component-links.php - Removed the last class from links
+ * style.css - Adjusted link spacing - 7.2 Registry / Links
+
+2011.11.18 - version 1.1.8
+ * /includes/js/jquery.countdown.min.js - Added support for localized strings for countdown labels.
+ * /includes/theme-js.php - Added localized strings for countdown labels in jquery-countdown.
+
+2011.10.18 - version 1.1.7
+ * style.css - fixed #logo .site-title to .site-title so text title option works
+
+2011.10.15 - version 1.1.6
+ * /includes/theme-options.php - Added layout options to post and slide post type
+ * single.php - Added layout option class code to the main div
+
+2011.09.29 - version 1.1.5
+ * /includes/theme-options.php - Updated description text on "url" custom field on "slide" post type.
+ * component-photoslider.php - Added support for "url" custom field, to override default link (no lightbox if a custom URL is in place).
+
+2011.09.08 - version 1.1.4
+ * /includes/js/general.js - Added hour and minute values to countdown timer.
+
+2011.09.06 - version 1.1.3
+ * styles.css - Added .home.layout-right-content #main { float:none; }
+
+2011.09.06 - version 1.1.2
+ * /includes/js/general.js - Fixed countdown to make sure the month value, when 10 or greater, still minuses 1, to ensure the correct month is detected (eg: October is 9, not 10).
+
+2011.09.01 - version 1.1.1
+ * style.css - Added height values for .jcarousel-list for each slides visible CSS class, to fix slide alignment issue on circular scroll.
+ * component-blog.php - Added support for woo_pagenav() pagination.
+
+2011.08.31 - version 1.1.0
+ * component-babystats.php - Added stripslashes to the component title output
+ * component-blog.php - Added stripslashes to the component title output
+ * component-comments.php - Added stripslashes to the component title output
+ * component-countdown.php - Added stripslashes to the component title output
+ * component-embed.php - Added stripslashes to the component title output
+ * component-footerwidgets.php - Added stripslashes to the component title output
+ * component-headline.php - Added stripslashes to the component title output
+ * component-links.php - Added stripslashes to the component title output
+ * component-occassionhosts.php - Added stripslashes to the component title output
+ * component-subscribe.php - Added stripslashes to the component title output
+ * component-photoslider.php - Added Slide Link option.
+ * includes/theme-options.php - Added Slide Link option.
+
+2011.08.27 - version 1.0.3
+ * /includes/js/general.js - Added BabyStats js
+ * /includes/js/jquery-textfill-0.1.js - Added
+ * /includes/theme-js.php - Added jquery-textfill-0.1.js
+ * component-babystats.php - Added <span class="dyntextval"></span>
+
+2011.08.24 - version 1.0.2
+ * /includes/js/general.js - Reload jQuery.Masonry when clicking the "Reply" or "Cancel Reply" links on comments.
+ * style.css - added font-weight:normal to @font-face to force Google Chrome to recognize b/strong tags.
+
+2011.08.21 - version 1.0.1
+ * single.php - moved single post image below post meta
+ * style.css - fixed nav line-height when custom typography is enabled, added nav background hover color, edited comment styles.
+ * component-photoslider.php - Updated photoslider to include auto-start and speed functionality.
+ * /includes/general.js - Fixed incorrect parsing of dates where month or day value contains a 0, changed comment field size to 33.
+ * /includes/theme-functions.php - Fixed loading of dynamic baby statistics CSS when using the default permalink structure. Added filter to woo_get_slide_dimensions() function.
+ * /includes/theme-options.php - Added option to adjust slider scrolling between "Circular" and "Jump to start/end" options.
+ * /includes/theme-js.php - Load comment reply JavaScript on the front page. Make slider settings available to the general.js file.
+	
+2011.08.18 - version 1.0
+ * First release!

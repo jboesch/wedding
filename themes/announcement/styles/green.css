@@ -1,0 +1,7 @@
+/* Green Stylesheet */
+
+body, .filagree-break span  { background-color: #d6f6d9; }
+.filagree-break, .post .title, .page .title, .archive_header  { border-color: #bbc8bc; }
+#post-author, .widget, #comments .comment, #connect .social, .countdown-timer .countdown_section, #stats .stat, .host_names .ampersand  { border-color: #c1d0c2; }
+.host_names .ampersand span  { color: #649182; }
+#comments .nocomments  { color: #70896C; }
