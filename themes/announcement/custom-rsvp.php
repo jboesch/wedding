@@ -18,6 +18,7 @@
         float: left;
         display: block;
         width: 300px;
+        margin-right: 5px;
     }
     #rsvp-form textarea {
         height: 100px;
@@ -57,6 +58,12 @@
             <input type="text" class="text" id="rsvp-email" />
             <div class="clear"></div>
         </li>
+        <li class="coming-li">
+            <label>Are you vegetarian?</label>
+            <input type="radio" id="rsvp-vegetarian-yes" name="rsvp-vegetarian" /> Yes &nbsp;&nbsp;
+            <input type="radio" id="rsvp-vegetarian-no" name="rsvp-vegetarian" checked="checked"  /> No
+            <div class="clear"></div>
+        </li>
         <li id="guests-li" class="coming-li">
             <label for="rsvp-guests">Guests?</label>
             <select id="rsvp-guests">
@@ -85,6 +92,7 @@
     <li class="coming-li guest-full-name">
         <label>Guest #{{ num }} full name</label>
         <input type="text" class="text guest-full-name-input" />
+        <input type="checkbox" class="guest-vegetarian-input" /> Vegetarian
         <div class="clear"></div>
     </li>
 </script>
@@ -114,8 +122,10 @@
 
         $('#rsvp-form input.submit').click(function(e){
 
+            var vegetarian = $('#rsvp-vegetarian-yes').is(':checked') ? 1 : 0;
             var $guest_inputs = $('#rsvp-form .guest-full-name-input');
             var empty_guest = false;
+            var coming = $('#rsvp-coming-yes').is(':checked') ? 1 : 0;
 
             if($.trim($('#rsvp-name').val()) == ''){
                 alert('You need to fill our your full name');
@@ -128,22 +138,30 @@
                 }
             });
 
-            if(empty_guest){
+            if(empty_guest && $guest_inputs.filter(':visible').length){
                 alert('You need to fill in all the guest full names');
                 return false;
             }
 
             var $submit = $(this);
+            var orig_submit_val = $submit.val();
             $submit.val('Submitting... Please wait...').attr('disabled', 'disabled');
 
+            var guests = [];
+            $guest_inputs.each(function(){
+                guests.push({
+                    vegetarian: $(this).parents('li').find('.guest-vegetarian-input').is(':checked') ? 1 : 0,
+                    full_name: $(this).val()
+                })
+            });
+
             var data = {
-                coming: $('#rsvp-coming-yes').is(':checked') ? 1 : 0,
+                coming: coming,
                 full_name: $('#rsvp-name').val(),
+                vegetarian: vegetarian,
                 email: $('#rsvp-email').val(),
                 allergies: $('#rsvp-allergies').val(),
-                guests: $guest_inputs.map(function(){
-                    return $(this).val()
-                }).get()
+                guests: guests
             };
 
             $.ajax({
@@ -153,7 +171,12 @@
                 type: 'GET',
                 success: function(res){
                     var cls = res.status;
-                    $('#rsvp-form').replaceWith('<div class="rsvp-' + cls + ' rsvp-notice">' + res.message + '</div>');
+                    if(cls == 'success'){
+                        $('#rsvp-form').replaceWith('<div class="rsvp-' + cls + ' rsvp-notice">' + res.message + '</div>');
+                    } else {
+                        alert(res.message);
+                        $submit.val(orig_submit_val).removeAttr('disabled');
+                    }
                     window.location.hash = 'rsvp';
                 }
             });
